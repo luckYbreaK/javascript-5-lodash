@@ -27,6 +27,8 @@
 // Look at the structure of the data, and use map to create an array of addresses.
 
 //
+// let _ = require("lodash");
+
 const myEmployees = [
   {
     _id: "59ad7afa5f5c26cc3a76c210",
@@ -282,12 +284,12 @@ const myEmployees = [
   }
 ];
 
-const myEmployeesAddresses = 0; // use map to get addresses here.
-
+const myEmployeesAddresses = _.map(myEmployees, "address"); // use map to get addresses here.
+// myEmployeesAddresses
 // Now we want to use map to get an array of ages of the employees.
 
-const myEmployeesAges = 0; // use map to get ages here.
-
+const myEmployeesAges = _.map(myEmployees, "age"); // use map to get ages here.
+// myEmployeesAges
 // union
 //  Union lets us take 2 arrays, and create a new array that only has 1 entry for
 //  each duplicated entry.
@@ -326,7 +328,8 @@ const breeFriendsEmails = [
   "dave@gmail.com"
 ];
 
-const listToSendEmailsTo = 0; // Put lodash here to make list of the union of the two address.
+const listToSendEmailsTo = _.union(bobFriendsEmails, breeFriendsEmails); // Put lodash here to make list of the union of the two address.
+// listToSendEmailsTo
 
 // intersection
 //  Intersection lets us take two arrays, and create a new array that only
@@ -339,7 +342,8 @@ const listToSendEmailsTo = 0; // Put lodash here to make list of the union of th
 // Bob and Bree have decided that instead of inviting everyone they know to their
 // party. They are instead only going to invite those people that they both know.
 
-const listOfSharedEmails = 0; // Use lodash to create the list that are in both lists
+const listOfSharedEmails = _.intersection(bobFriendsEmails, breeFriendsEmails); // Use lodash to create the list that are in both lists
+// listOfSharedEmails
 
 // groupBy
 //  Group By lets us take an array of objects, and group then into groups based
@@ -403,8 +407,8 @@ const purchases = [
   { month: "February", price: 23.65 }
 ];
 
-const purchasesByMonth = 0; // Use groupBy to group the purchases by the month that they were made.
-
+const purchasesByMonth = _.groupBy(purchases, 'month'); // Use groupBy to group the purchases by the month that they were made.
+// purchasesByMonth
 // Bonus Points
 const totalByMonth = 0; // Use the grouped purchasesByMonth and reduce to create a totalByMonth object.
 
